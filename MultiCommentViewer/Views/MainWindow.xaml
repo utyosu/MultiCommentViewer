@@ -72,7 +72,7 @@
                                                     <ColumnDefinition Width="Auto"/>
                                                     <ColumnDefinition Width="Auto"/>
                                                 </Grid.ColumnDefinitions>
-                                                <ContentPresenter x:Name="Icon" ContentSource="Icon" 
+                                                <ContentPresenter x:Name="Icon" ContentSource="Icon"
                                                           SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" VerticalAlignment="Center"
                                                           HorizontalAlignment="Center" Width="16" Height="16" Margin="3"/>
                                                 <Path x:Name="GlyphPanel" Data="F1 M 10.0,1.2 L 4.7,9.1 L 4.5,9.1 L 0,5.2 L 1.3,3.5 L 4.3,6.1L 8.3,0 L 10.0,1.2 Z" FlowDirection="LeftToRight" Margin="3"
@@ -85,7 +85,7 @@
                                                Placement="Bottom"
                                                IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}"
                                                PlacementTarget="{Binding ElementName=templateRoot}">
-                                                    <Border x:Name="SubMenuBorder" 
+                                                    <Border x:Name="SubMenuBorder"
                                                             Background="{TemplateBinding Control.Background}"
                                                             BorderBrush="{Binding MenuPopupBorderBrush}"
                                                             BorderThickness="1" Padding="2">
@@ -166,12 +166,14 @@
                     </Style>
                 </MenuItem.ItemContainerStyle>
             </MenuItem>
+            <!-- ミクチャ関連の問い合わせが作者にいかないようにする
             <MenuItem Header="ヘルプ">
                 <MenuItem Header="配布サイト" Command="{Binding ShowWebSiteCommand}" />
                 <MenuItem Header="作者のTwitter" Command="{Binding ShowDevelopersTwitterCommand}" />
                 <Separator />
                 <MenuItem Header="アップデートを確認" Command="{Binding CheckUpdateCommand}" />
             </MenuItem>
+            -->
         </Menu>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
