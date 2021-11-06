@@ -591,7 +591,7 @@ namespace MultiCommentViewer
         }
         string Name
         {
-            get { return "MultiCommentViewer"; }
+            get { return "MultiCommentViewer for ミクチャ"; }
         }
         string Fullname
         {
@@ -1071,9 +1071,7 @@ namespace MultiCommentViewer
         }
         private string GetAppName()
         {
-            var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            var title = asm.GetName().Name;
-            return title;
+            return Name;
         }
         private string GetUserAgent()
         {

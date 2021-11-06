@@ -18,19 +18,19 @@ namespace MultiCommentViewer.Test
         {
             var list = new List<ISiteContext>
             {
-                new YouTubeLiveSitePlugin.Test2.YouTubeLiveSiteContext(options, new YouTubeLiveSitePlugin.Test2.YouTubeLiveServer(), logger, userStoreManager),
-                new OpenrecSitePlugin.OpenrecSiteContext(options, logger, userStoreManager),
+                // new YouTubeLiveSitePlugin.Test2.YouTubeLiveSiteContext(options, new YouTubeLiveSitePlugin.Test2.YouTubeLiveServer(), logger, userStoreManager),
+                // new OpenrecSitePlugin.OpenrecSiteContext(options, logger, userStoreManager),
                 new MixchSitePlugin.MixchSiteContext(options, logger, userStoreManager),
-                new TwitchSitePlugin.TwitchSiteContext(options,new TwitchSitePlugin.TwitchServer(), logger, userStoreManager),
-                new NicoSitePlugin.NicoSiteContext(options,new NicoSitePlugin.DataSource(userAgent), logger, userStoreManager),
-                new TwicasSitePlugin.TwicasSiteContext(options,logger, userStoreManager),
-                new LineLiveSitePlugin.LineLiveSiteContext(options,new LineLiveSitePlugin.LineLiveServer(), logger, userStoreManager),
-                new WhowatchSitePlugin.WhowatchSiteContext(options, logger, userStoreManager),
-                new MirrativSitePlugin.MirrativSiteContext(options,new MirrativSitePlugin.MirrativServer(), logger, userStoreManager),
-                new PeriscopeSitePlugin.PeriscopeSiteContext(options,new PeriscopeSitePlugin.PeriscopeServer(), logger,userStoreManager),
-                new ShowRoomSitePlugin.ShowRoomSiteContext(options,new ShowRoomSitePlugin.ShowRoomServer(), logger,userStoreManager),
-                new MildomSitePlugin.MildomSiteContext(options, new MildomSitePlugin.MildomServer(),logger, userStoreManager),
-                new BigoSitePlugin.BigoSiteContext(options, new BigoSitePlugin.BigoServer(), logger, userStoreManager),
+                // new TwitchSitePlugin.TwitchSiteContext(options,new TwitchSitePlugin.TwitchServer(), logger, userStoreManager),
+                // new NicoSitePlugin.NicoSiteContext(options,new NicoSitePlugin.DataSource(userAgent), logger, userStoreManager),
+                // new TwicasSitePlugin.TwicasSiteContext(options,logger, userStoreManager),
+                // new LineLiveSitePlugin.LineLiveSiteContext(options,new LineLiveSitePlugin.LineLiveServer(), logger, userStoreManager),
+                // new WhowatchSitePlugin.WhowatchSiteContext(options, logger, userStoreManager),
+                // new MirrativSitePlugin.MirrativSiteContext(options,new MirrativSitePlugin.MirrativServer(), logger, userStoreManager),
+                // new PeriscopeSitePlugin.PeriscopeSiteContext(options,new PeriscopeSitePlugin.PeriscopeServer(), logger,userStoreManager),
+                // new ShowRoomSitePlugin.ShowRoomSiteContext(options,new ShowRoomSitePlugin.ShowRoomServer(), logger,userStoreManager),
+                // new MildomSitePlugin.MildomSiteContext(options, new MildomSitePlugin.MildomServer(),logger, userStoreManager),
+                // new BigoSitePlugin.BigoSiteContext(options, new BigoSitePlugin.BigoServer(), logger, userStoreManager),
 #if DEBUG
                 new TestSitePlugin.TestSiteContext(options),
 #endif
