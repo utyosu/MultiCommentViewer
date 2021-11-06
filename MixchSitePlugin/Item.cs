@@ -270,6 +270,8 @@ namespace MixchSitePlugin
                 {364, "ナビネオン"},
                 {365, "TGC CAMPUS"},
                 {366, "TGC CAMPUS フラワーランウェイ"},
+                {367, "TGC CAMPUS フラワーアーチ"},
+                {368, "TGC CAMPUS フラワーランウェイ スカイランタン"},
             };
         }
 
