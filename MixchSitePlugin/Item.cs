@@ -271,7 +271,9 @@ namespace MixchSitePlugin
                 {365, "TGC CAMPUS"},
                 {366, "TGC CAMPUS フラワーランウェイ"},
                 {367, "TGC CAMPUS フラワーアーチ"},
-                {368, "TGC CAMPUS フラワーランウェイ スカイランタン"},
+                {369, "miao"},
+                {370, "ミクリンピックマ"},
+                {371, "ミクリンピック聖火台"},
             };
         }
 
