@@ -3,4 +3,4 @@ using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("MultiCommentViewerTests")]
 
-[assembly: AssemblyVersion("1.0.2")]
+[assembly: AssemblyVersion("1.0.3")]
