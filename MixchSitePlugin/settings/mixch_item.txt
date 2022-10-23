@@ -282,3 +282,14 @@
 395=サクラバシ919
 396=メガホン
 397=ミックマ応援団
+400=蒙古タンメン
+401=北極ラーメン
+402=卍メガフェス卍
+405=CA Make a wish
+406=CA ジュエリーボックス
+407=CA ジュエリーヴェール
+408=CAMPUS FES
+409=CF Bouquet
+410=CF Celebration
+411=CAMPUS BOYS
+412=MIKKUMA BOYS
