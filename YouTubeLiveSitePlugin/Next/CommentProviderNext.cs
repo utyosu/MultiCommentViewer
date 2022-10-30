@@ -168,7 +168,7 @@ namespace YouTubeLiveSitePlugin.Next
             InfoReceived?.Invoke(this, new InfoData { Comment = message, Type = type });
         }
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="vid"></param>
         /// <param name="ytCfg"></param>
@@ -987,6 +987,12 @@ namespace YouTubeLiveSitePlugin.Next
         protected virtual CookieContainer CreateCookieContainer(IBrowserProfile browserProfile)
         {
             var cc = new CookieContainer();//まずCookieContainerのインスタンスを作っておく。仮にCookieの取得で失敗しても/live_chatで"YSC"と"VISITOR_INFO1_LIVE"が取得できる。これらは/service_ajaxでメタデータを取得する際に必須。
+
+            // ログインしているとチャット取得時にうまく認証が通らないので、
+            // Cookie を無効化して未ログイン状態にする。
+            return cc;
+
+            /*
             try
             {
                 var cookies = browserProfile.GetCookieCollection("youtube.com");
@@ -1000,6 +1006,7 @@ namespace YouTubeLiveSitePlugin.Next
                 _logger.LogException(ex);
             }
             return cc;
+            */
         }
         public override async Task PostCommentAsync(string text)
         {
