@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System;
 using System.Text;
 using System.Diagnostics;
@@ -58,6 +58,7 @@ namespace MixchSitePlugin
                 url = @$"https://{liveUrlInfo.Environment}.mixch.tv/v5/live/item/list";
             }
             Debug.WriteLine($"Item get url = {url}");
+            client.DefaultRequestHeaders.Add("User-Agent", "mixch/13.0.0 (jp.ne.mixch.dev; build: 13.0.0.0; iOS 15.0)");
             var result = await client.GetAsync(url);
 
             // ステータスコードが 200 以外ならアイテムリストの処理を終了する
