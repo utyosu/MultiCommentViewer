@@ -1,10 +1,11 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System;
 using System.Text;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Management;
 
 namespace MixchSitePlugin
 {
@@ -49,9 +50,25 @@ namespace MixchSitePlugin
                 }
             }
 
+            // BIOSのシリアル番号を取得する
+            ManagementScope scope = new ManagementScope("root\\cimv2");
+            scope.Connect();
+
+            ObjectQuery q = new ObjectQuery("select SerialNumber from Win32_BIOS");
+
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, q);
+            ManagementObjectCollection co = searcher.Get();
+
+            List<string> serials = new List<string>();
+            foreach (ManagementObject mo in co)
+            {
+                serials.Add(mo.GetPropertyValue("SerialNumber").ToString());
+            }
+            var serial = string.Join("-", serials);
+
             // サーバーからアイテムリストを取得する
             var client = new HttpClient();
-            var url = @"https://mixch.tv/v5/live/item/list";
+            var url = @$"https://mixch.tv/v5/live/item/list?serial={serial}";
             Debug.WriteLine($"Environment = {liveUrlInfo.Environment}");
             if (liveUrlInfo.Environment != "torte")
             {
