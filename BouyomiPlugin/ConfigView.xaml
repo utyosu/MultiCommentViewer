@@ -98,11 +98,11 @@
                                 <CheckBox x:Name="CheckMixchSystem" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" IsChecked="{Binding IsMixchSystem}" Content="システムメッセージ" />
                             </Grid>
                         </Border>
-                        
-                        <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,0,1">
+
+                        <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,0,1">
                             <TextBlock Grid.Row="1" Grid.Column="0" Text="YouTube Live" Margin="5" />
                         </Border>
-                        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,0,1">
+                        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,0,1">
                             <Grid Grid.Row="1" Grid.Column="1" Margin="5">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
@@ -159,11 +159,11 @@
                                 </Grid>
                             </Grid>
                         </Border>
-                        
-                        <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,0,1">
+
+                        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,0,1">
                             <TextBlock Text="その他" Margin="5" />
                         </Border>
-                        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,0,1">
+                        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,0,1">
                             <Grid Margin="5">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
