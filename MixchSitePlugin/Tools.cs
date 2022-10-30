@@ -20,7 +20,7 @@ namespace MixchSitePlugin
     }
     static class Tools
     {
-        private const string regexLiveUrl = "([a-z]*)\\.?mixch\\.tv/u/(?<id>[0-9]+)/live";
+        private const string regexLiveUrl = "([a-z0-9]*)\\.?mixch\\.tv/u/(?<id>[0-9]+)/live";
         public static async Task<LiveUrlInfo> GetLiveId(IDataSource dataSource, string input)
         {
             // LIVE_ID

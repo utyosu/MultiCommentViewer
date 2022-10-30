@@ -65,6 +65,7 @@ namespace MixchSitePlugin
         const int LiveStatusOnAir = 0;
         const int LiveStatusOffAir = 1;
         private int _liveStatus = LiveStatusUnknown;
+        private Item item = new Item();
         public int LiveStatus
         {
             get { return _liveStatus; }
@@ -156,6 +157,8 @@ namespace MixchSitePlugin
 
             // TODO: 過去のコメントを取得する
 
+            await item.ReadItems(liveUrlInfo);
+
             while (!_isExpectedDisconnect)
             {
                 _ws = CreateMixchWebsocket();
@@ -239,7 +242,7 @@ namespace MixchSitePlugin
             user.Name = nameItems;
 
             var messageItems = new List<IMessagePart>();
-            var messageBody = p.Message();
+            var messageBody = p.Message(item);
             if (!string.IsNullOrEmpty(messageBody))
             {
                 messageItems.Add(MessagePartFactory.CreateMessageText(messageBody));
@@ -407,7 +410,7 @@ namespace MixchSitePlugin
                         }
                     }
                 }
-                else if (p.HasMessage())
+                else if (p.HasMessage(item))
                 {
                     var messageContext = CreateMessageContext(p, false);
                     if (messageContext != null)

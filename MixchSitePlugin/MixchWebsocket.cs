@@ -23,11 +23,13 @@ namespace MixchSitePlugin
             _websocket.Opened += Websocket_Opened;
 
             var host = "chat";
+            var dir = "torte";
             if (liveUrlInfo.Environment != "torte")
             {
                 host = "chat-dev";
+                dir = "andagi";
             }
-            var url = $"wss://{host}.mixch.tv/{liveUrlInfo.Environment}/room/{liveUrlInfo.LiveId}";
+            var url = $"wss://{host}.mixch.tv/{dir}/room/{liveUrlInfo.LiveId}";
             Debug.WriteLine(url);
             await _websocket.ReceiveAsync(url, userAgent, origin);
             // 切断後処理

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace MixchSitePlugin
 {
-    public class Packet
+    class Packet
     {
         [JsonProperty("kind")]
         public int Kind { get; set; }
@@ -71,12 +71,12 @@ namespace MixchSitePlugin
             return (MixchMessageType)Kind == MixchMessageType.Status;
         }
 
-        public bool HasMessage()
+        public bool HasMessage(Item i)
         {
-            return !string.IsNullOrEmpty(Message());
+            return !string.IsNullOrEmpty(Message(i));
         }
 
-        public string Message()
+        public string Message(Item i)
         {
             switch ((MixchMessageType)Kind)
             {
@@ -88,14 +88,14 @@ namespace MixchSitePlugin
                 case MixchMessageType.EnterFanclub:
                     return Body;
                 case MixchMessageType.SuperComment:
-                    return $"【スパコメ {ItemName()}】{Body}";
+                    return $"【スパコメ {ItemName(i)}】{Body}";
                 case MixchMessageType.Stamp:
-                    return $"【スタンプ】「{ItemName()}」で応援しました";
+                    return $"【スタンプ】「{ItemName(i)}」で応援しました";
                 case MixchMessageType.PoiPoi:
-                    return $"【アイテム】{Count}個の「{ItemName()}」で応援しました";
+                    return $"【アイテム】{Count}個の「{ItemName(i)}」で応援しました";
                 case MixchMessageType.Item:
                 case MixchMessageType.CoinBox:
-                    return $"【アイテム】「{ItemName()}」で応援しました";
+                    return $"【アイテム】「{ItemName(i)}」で応援しました";
             }
             return "";
         }
@@ -110,9 +110,9 @@ namespace MixchSitePlugin
             return String.Format("盛り上がり度: {0:#,0}", DisplayPoint);
         }
 
-        private string ItemName()
+        private string ItemName(Item i)
         {
-            var name = Item.NameByResourceId(ResourceId);
+            var name = i.NameByResourceId(ResourceId);
             return !string.IsNullOrEmpty(name) ? name : $"名称不明(id={ResourceId})";
         }
     }
