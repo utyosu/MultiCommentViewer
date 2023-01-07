@@ -116,6 +116,7 @@ namespace MultiCommentViewer
             Thumbnail = null;
             Id = message.Id;
             PostTime = message.PostTime.ToString("HH:mm:ss");
+            Info = message.Info;
         }
 
         public IConnectionStatus ConnectionName { get; }

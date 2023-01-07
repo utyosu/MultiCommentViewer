@@ -259,6 +259,7 @@ namespace MixchSitePlugin
                 PostTime = DateTimeOffset.FromUnixTimeSeconds(p.Created).LocalDateTime,
                 UserId = p.UserId.ToString(),
                 IsFirstComment = isFirstComment,
+                Info = p.SuperFanRankName(),
             };
             var metadata = new MessageMetadata(message, _options, _siteOptions, user, this, isFirstComment)
             {

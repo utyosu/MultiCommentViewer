@@ -30,5 +30,6 @@ namespace MixchSitePlugin
         DateTime PostTime { get; }
         bool IsFirstComment { get; }
         string UserId { get; }
+        string Info { get; }
     }
 }

@@ -18,5 +18,6 @@ namespace MixchSitePlugin
         {
 
         }
+        public string Info { get; set; }
     }
 }

@@ -122,10 +122,12 @@ namespace MixchSitePlugin
             return !string.IsNullOrEmpty(name) ? name : $"名称不明(id={ResourceId})";
         }
 
-        private string SuperFanRankName()
+        public string SuperFanRankName()
         {
             switch(SuperFanRank)
             {
+                case 0:
+                    return "";
                 case 1:
                     return "1K";
                 case 2:
