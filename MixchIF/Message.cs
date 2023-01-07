@@ -18,6 +18,7 @@ namespace MixchSitePlugin
         EnterLevel = 61,
         Follow = 62,
         EnterFanclub = 63,
+        SuperFan = 64,
     }
 
     public interface IMixchMessage : ISiteMessage
@@ -29,5 +30,6 @@ namespace MixchSitePlugin
         DateTime PostTime { get; }
         bool IsFirstComment { get; }
         string UserId { get; }
+        string Info { get; }
     }
 }
