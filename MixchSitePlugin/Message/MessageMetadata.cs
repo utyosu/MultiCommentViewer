@@ -26,6 +26,7 @@ namespace MixchSitePlugin
             MixchMessageType.EnterLevel,
             MixchMessageType.Follow,
             MixchMessageType.EnterFanclub,
+            MixchMessageType.SuperFan,
         });
 
         public Color BackColor

@@ -52,6 +52,9 @@ namespace MixchSitePlugin
         [JsonProperty("anonymous")]
         public int Anonymous { get; set; }
 
+        [JsonProperty("superfan_rank")]
+        public int SuperFanRank { get; set; }
+
         public bool IsSystemMessage()
         {
             switch ((MixchMessageType)Kind)
@@ -61,6 +64,7 @@ namespace MixchSitePlugin
                 case MixchMessageType.EnterLevel:
                 case MixchMessageType.Follow:
                 case MixchMessageType.EnterFanclub:
+                case MixchMessageType.SuperFan:
                     return true;
             }
             return false;
@@ -87,6 +91,8 @@ namespace MixchSitePlugin
                 case MixchMessageType.Follow:
                 case MixchMessageType.EnterFanclub:
                     return Body;
+                case MixchMessageType.SuperFan:
+                    return $"{_name}さんが{SuperFanRankName()}のガチファンになりました";
                 case MixchMessageType.SuperComment:
                     return $"【スパコメ {ItemName(i)}】{Body}";
                 case MixchMessageType.Stamp:
@@ -114,6 +120,32 @@ namespace MixchSitePlugin
         {
             var name = i.NameByResourceId(ResourceId);
             return !string.IsNullOrEmpty(name) ? name : $"名称不明(id={ResourceId})";
+        }
+
+        private string SuperFanRankName()
+        {
+            switch(SuperFanRank)
+            {
+                case 1:
+                    return "1K";
+                case 2:
+                    return "5K";
+                case 3:
+                    return "10K";
+                case 4:
+                    return "30K";
+                case 5:
+                    return "50K";
+                case 6:
+                    return "100K";
+                case 7:
+                    return "200K";
+                case 8:
+                    return "300K";
+                case 9:
+                    return "500K";
+            }
+            return "不明";
         }
     }
 }
